@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
           displaySmall: TextStyle(
             color: Colors.white, fontWeight: FontWeight.bold),
           headlineSmall: TextStyle( //Para titulos principales
-            color: Colors.black, fontWeight: FontWeight.bold),//fontSize: 30.0
+            color: Colors.black, fontWeight: FontWeight.bold,fontSize: 30.0),
           titleLarge: TextStyle(  //Para subtitulos
               color: Colors.black, fontWeight: FontWeight.bold),
-          titleMedium: TextStyle( //Para texto de botones
-            color: Colors.white),
+          titleSmall: TextStyle( //Para texto de botones
+            color: Colors.white,fontSize: 17.0),
           bodySmall: TextStyle( //Para descripciones de las cards de comida
-              color: Color.fromRGBO(163, 155, 155, 1.0),fontWeight: FontWeight.w500),
+              color: Color.fromRGBO(163, 155, 155, 1.0),fontWeight: FontWeight.w500,fontSize: 13.0),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
@@ -38,11 +38,11 @@ class MyApp extends StatelessWidget {
           )
         ),
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(
+        /*appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
             color: Colors.black
           )
-        )
+        )*/
         //primaryColor: const Color.fromRGBO(10, 31, 68, 1.0),
         //colorScheme: ColorScheme.fromSeed(seedColor:Colors.deepOrange),
         //useMaterial3: true,

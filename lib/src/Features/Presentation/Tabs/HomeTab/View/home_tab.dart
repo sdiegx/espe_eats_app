@@ -19,10 +19,7 @@ class HomeTab extends StatelessWidget {
                       Container(
                         margin: const EdgeInsets.symmetric(vertical: 20.0),
                         alignment: Alignment.centerLeft,
-                        child: const Text("Descubre nuevos lugares", style:TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30.0))
+                        child: Text("Descubre nuevos lugares", style: Theme.of(context).textTheme.headlineSmall)
                       ),
                       _sliderCards(),
                       _headers(context, "Popular esta semana","Mostrar todo"),
@@ -77,7 +74,6 @@ Widget _topBar(BuildContext context){
         child: IconButton(
           icon: const Icon(Icons.filter_list,size: 30.0),
           onPressed: (){
-
           })
       )
     ],
@@ -120,10 +116,7 @@ Widget _tarjeta(BuildContext context){
             ),
             Container(
               alignment: Alignment.centerLeft,
-              child: const Text("Alado del tierrero", style: TextStyle(
-                  color: gray,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 13.0)),
+              child: Text("Alado del tierrero", style: Theme.of(context).textTheme.bodySmall),
             ),
             Row(
               children: [
@@ -142,8 +135,7 @@ Widget _tarjeta(BuildContext context){
                   height: 18.0,
                   child: ElevatedButton(//poner color del theme//
                     style: ElevatedButton.styleFrom(
-                      shape: const StadiumBorder(),
-                      backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0)
+                      shape: const StadiumBorder()
                     ),
                     onPressed: () {},
                     child: const Text("Delivery", style:TextStyle(fontSize: 11.0)),
@@ -162,10 +154,7 @@ Widget _headers( BuildContext context, String? textHeader, String textAction){
     children: [
       Container(
           alignment: Alignment.centerLeft,
-          child: Text(textHeader??"", style:const TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0))
+          child: Text(textHeader??"", style: Theme.of(context).textTheme.titleLarge)
       ),
       const Spacer(),
       GestureDetector(
@@ -215,8 +204,7 @@ Widget _populars(BuildContext context, String foto){
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: const EdgeInsets.only(bottom: 5.0),
-                    child: const Text("Alado del tierrero", style: TextStyle(
-                      color: gray, fontWeight: FontWeight.w500, fontSize: 13.0)),
+                    child: Text("Alado del tierrero", style: Theme.of(context).textTheme.bodySmall),
                   ),
                   Row(
                     children: [
@@ -225,8 +213,7 @@ Widget _populars(BuildContext context, String foto){
                           color: Colors.black, fontWeight: FontWeight.w500, fontSize: 13.0)),
                       Container(
                         margin: const EdgeInsets.only(left: 5.0),
-                        child: const Text("79 Calificaciones", style: TextStyle(
-                            color: gray, fontWeight: FontWeight.w500, fontSize: 13.0)),
+                        child: Text("79 Calificaciones", style: Theme.of(context).textTheme.bodySmall),
                       ),
                       Container(
                         margin: const EdgeInsets.only(left: 25.0),
@@ -236,7 +223,6 @@ Widget _populars(BuildContext context, String foto){
                           style: ElevatedButton.styleFrom(
                               elevation: 0.5,
                               shape: const StadiumBorder(),
-                              backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0)
                           ),
                           onPressed: () {},
                           child: const Text("Delivery", style:TextStyle(fontSize: 11.0)),

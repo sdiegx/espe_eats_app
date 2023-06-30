@@ -29,12 +29,9 @@ class WelcomePage extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                child:  const Text("Cansado de ser pobre y vivir lejos? Ahora solo vive lejos",
+                child: Text("Cansado de ser pobre y vivir lejos? Ahora solo vive lejos",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 45.0))
+                    style: Theme.of(context).textTheme.displaySmall)
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 30.0),
@@ -45,36 +42,20 @@ class WelcomePage extends StatelessWidget {
                 )),
               ),
               SizedBox(
-                width: 350.0,
-                height: 50.0,
-                child: ElevatedButton(//poner color del theme
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0)
-                      ),
-                    //backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0),
-                  ),
-
+                child: ElevatedButton(
                   onPressed: (){
                     Navigator.pushNamed(context, 'login');
                   },
-                  child: const Text("Iniciar Sesión", style:TextStyle(
-                    color: Colors.white,
-                    fontSize: 15.0
-                  )),
+                  child: Text("Iniciar Sesión", style: Theme.of(context).textTheme.titleSmall),
                 )
               ),
               Container(
                   width: 350.0,
                   height: 50.0,
                   margin: const EdgeInsets.only(top: 20.0),
-                  child: ElevatedButton(//poner color del theme
+                  child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0)
-                          ),
-                        backgroundColor: const Color.fromRGBO(0, 122, 255, 1.0),
-                      ),
+                        backgroundColor: const Color.fromRGBO(0, 122, 255, 1.0)),
                       onPressed: (){
                       Navigator.pushNamed(context, 'login');
                     },
@@ -88,9 +69,7 @@ class WelcomePage extends StatelessWidget {
                         ),
                         Container(
                           margin: const EdgeInsets.only(left: 10.0),
-                          child: const Text("Conectar con Facebook", style:TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.0)),
+                          child: Text("Conectar con Facebook", style: Theme.of(context).textTheme.titleSmall)
                         )
                       ],
                     )

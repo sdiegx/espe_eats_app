@@ -25,12 +25,7 @@ class SignUpPage extends StatelessWidget {
           padding: const EdgeInsets.all(30.0),
           child:  Column(
             children: [
-              const Text("Crear una cuenta", style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0
-              )),
-              //color: THeme.of(context).primaryColor
+              Text("Crear una cuenta", style: Theme.of(context).textTheme.headlineSmall),
               _userNameInput(context),
               _emailInput(context),
               _phoneInput(context),
@@ -157,23 +152,12 @@ Widget _passwordInput(BuildContext context){
 
 Widget _signUpButton( BuildContext context){
   return Container(
-      width: 350.0,
-      height: 50.0,
       margin: const EdgeInsets.only(top: 30.0),
       child: ElevatedButton(//poner color del theme
-        style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)
-            ),
-            backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0)
-        ),
         onPressed: (){
-
+          Navigator.pushNamed(context, 'login');
         },
-        child: const Text("Registrarse", style:TextStyle(
-            color: Colors.white,
-            fontSize: 17.0
-        )),
+        child: Text("Registrarse", style: Theme.of(context).textTheme.titleSmall)
       )
   );
 }
