@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 //Widgets
 import '../../Widgets/back_button.dart';
 
-//UI
-import 'package:flutter/services.dart';
-
 //Colors
 import '../../../../colors/colors.dart';
 
@@ -54,11 +51,7 @@ class  LoginPage extends StatelessWidget {
                   child: Center(
                     child: Column(
                       children: [
-                        const Text("Bienvenido", style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30.0
-                        )),
+                        Text("Bienvenido",style: Theme.of(context).textTheme.headlineSmall),
                         const Text("Ingrese a su cuenta", style: TextStyle(
                             color: gray,
                             fontWeight: FontWeight.w500,
@@ -162,23 +155,12 @@ Widget _passwordInput(){
 
 Widget _loginButton( BuildContext context){
   return Container(
-      width: 350.0,
-      height: 50.0,
       margin: const EdgeInsets.only(top: 30.0),
-      child: ElevatedButton(//poner color del theme
-        style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)
-            ),
-          backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0)
-        ),
+      child: ElevatedButton(
         onPressed: (){
           Navigator.pushNamed(context, 'tabs');
         },
-        child: const Text("Iniciar Sesión", style:TextStyle(
-            color: Colors.white,
-            fontSize: 17.0
-        )),
+        child: Text("Iniciar Sesión", style: Theme.of(context).textTheme.titleSmall)
       )
   );
 }

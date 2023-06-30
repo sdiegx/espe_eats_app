@@ -21,11 +21,8 @@ class ForgotPassword extends StatelessWidget {
           padding: const EdgeInsets.all(30.0),
           child: Column(
             children: [
-              const Text("¿Has olvidado tu contraseña?", textAlign: TextAlign.center,
-                  style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0 )),
+              Text("¿Has olvidado tu contraseña?", textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headlineSmall),
               Container(
                 padding: const EdgeInsets.all(10.0),
                 child: const Text("Por favor ingrese su correo electrónico. "
@@ -71,19 +68,10 @@ Widget _sendButton( BuildContext context){
       height: 50.0,
       margin: const EdgeInsets.only(top: 40.0),
       child: ElevatedButton(//poner color del theme
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0)
-          ),
-          backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0)
-        ),
         onPressed: (){
           _showAlertFP(context);
         },
-        child: const Text("Enviar", style:TextStyle(
-            color: Colors.white,
-            fontSize: 17.0
-        )),
+        child: Text("Enviar", style: Theme.of(context).textTheme.titleSmall),
 
       )
   );
@@ -109,17 +97,17 @@ void _showAlertFP(BuildContext context){
                 ),
                 Container(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text("Tu contraseña ha sido restablecida.",
+                  child: const Text("Tu contraseña ha sido restablecida.",
                       style: TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 20.0 )),
                 ),
                 Container(
                   padding: const EdgeInsets.all(10.0),
-                  child: Text("En breve recibirá un correo electrónico con un código para configurar una nueva contraseña.",
+                  child: const Text("En breve recibirá un correo electrónico con un código para configurar una nueva contraseña.",
                       style: TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.black,
                           fontWeight: FontWeight.w400,
                           fontSize: 15.0 )),
                 ),
@@ -134,23 +122,12 @@ void _showAlertFP(BuildContext context){
 
 Widget _doneButton(BuildContext context){
   return Container(
-      width: 350.0,
-      height: 50.0,
       margin: const EdgeInsets.only(top: 40.0),
       child: ElevatedButton(//poner color del theme
-        style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)
-            ),
-          backgroundColor: const Color.fromRGBO(255, 140, 0, 1.0)
-        ),
         onPressed: (){
           Navigator.pushNamed(context, 'login');
         },
-        child: const Text("¡Está hecho!", style:TextStyle(
-            color: Colors.white,
-            fontSize: 17.0
-        )),
+        child: Text("¡Está hecho!", style: Theme.of(context).textTheme.titleSmall),
       )
   );
 }
