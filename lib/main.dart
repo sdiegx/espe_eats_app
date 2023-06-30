@@ -43,9 +43,6 @@ class MyApp extends StatelessWidget {
             color: Colors.black
           )
         )*/
-        //primaryColor: const Color.fromRGBO(10, 31, 68, 1.0),
-        //colorScheme: ColorScheme.fromSeed(seedColor:Colors.deepOrange),
-        //useMaterial3: true,
       ),
     );
   }
