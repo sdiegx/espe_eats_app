@@ -77,6 +77,7 @@ Widget _sendButton( BuildContext context){
   );
 }
 
+
 void _showAlertFP(BuildContext context){
   showDialog(
       context: context,
@@ -97,11 +98,8 @@ void _showAlertFP(BuildContext context){
                 ),
                 Container(
                   padding: const EdgeInsets.all(10.0),
-                  child: const Text("Tu contraseña ha sido restablecida.",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0 )),
+                  child: Text("Tu contraseña ha sido restablecida.",
+                      style: Theme.of(context).textTheme.titleLarge),
                 ),
                 Container(
                   padding: const EdgeInsets.all(10.0),
