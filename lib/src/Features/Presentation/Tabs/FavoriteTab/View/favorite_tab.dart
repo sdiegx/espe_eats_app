@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './../../../../../Colors/colors.dart';
 
 class FavoriteTab extends StatefulWidget {
   const FavoriteTab({super.key});
@@ -10,9 +11,20 @@ class FavoriteTab extends StatefulWidget {
 class _FavoriteTabState extends State<FavoriteTab> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text("favoritos"),
+    return Scaffold(
+      backgroundColor: bgGray,
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            leading: Text(''),
+            backgroundColor: bgGray,
+            title: Text(
+              "Probando",
+              style: TextStyle(
+                  fontSize: 40, fontWeight: FontWeight.w600, color: Colors.red),
+            ),
+          )
+        ],
       ),
     );
   }
