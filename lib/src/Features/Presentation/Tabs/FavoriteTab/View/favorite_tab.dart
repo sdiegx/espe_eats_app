@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:espeats/src/Colors/colors.dart';
 
-import 'package:espeats/src/Colors/colors.dart';
-
-
 class FavoriteTab extends StatefulWidget {
   const FavoriteTab({Key? key});
 
@@ -19,7 +16,6 @@ class _FavoriteTabState extends State<FavoriteTab> {
       body: CustomScrollView(
         slivers: <Widget>[
           const SliverAppBar(
-
             leading: Text(''),
             backgroundColor: Colors.white,
             title: Text(
@@ -36,7 +32,7 @@ class _FavoriteTabState extends State<FavoriteTab> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Navigator.pushNamed(context, 'place_detail');
                   },
                   child: Column(

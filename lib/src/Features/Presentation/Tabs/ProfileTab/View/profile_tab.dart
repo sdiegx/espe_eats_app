@@ -12,8 +12,15 @@ class _ProfileTabState extends State<ProfileTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [_header()],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            GestureDetector(
+                onTap: () => Navigator.pushNamed(context, 'profile-detail'),
+                child: _header()),
+            _contentProfile()
+          ],
+        ),
       ),
     );
   }
@@ -22,7 +29,7 @@ class _ProfileTabState extends State<ProfileTab> {
 Widget _header() {
   return LayoutBuilder(
     builder: (BuildContext context, BoxConstraints constraints) {
-      double height = constraints.maxWidth > 600 ? 300 : 250;
+      double height = constraints.maxWidth > 600 ? 200 : 160;
       return Container(
           height: height,
           color: bgGray,
@@ -92,3 +99,184 @@ Widget _header() {
     },
   );
 }
+
+Widget _contentProfile() {
+  return Container(
+    padding: EdgeInsets.all(10),
+    child: Column(children: [
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/3916/3916808.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Notificaciones',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/7653/7653682.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Método de Pago',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/3916/3916808.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Historial',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/8770/8770923.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Mi código de promoción',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      SizedBox(height: 50),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/9811/9811205.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Configuración',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/3917/3917717.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Invitar amigos',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/3917/3917673.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Centro de ayuda',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/3916/3916714.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Sobre nosotros',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+      ListTile(
+        leading: Image(
+          image: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/128/3914/3914420.png'),
+          width: 29,
+          height: 29,
+        ),
+        title: Text(
+          'Terminos y condiciones',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.chevron_right,
+            color: gray,
+          ),
+          onPressed: () {},
+        ),
+      ),
+    ]),
+  );
+}
+
