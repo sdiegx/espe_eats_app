@@ -8,7 +8,6 @@ import '../Features/Presentation/Tabs/TabsPage/View/tabs_page.dart';
 import 'package:espeats/src/Features/Presentation/SearchPage/View/search_page.dart';
 import '../Features/Presentation/PlaceDetailPage/View/place_detail_page.dart';
 import 'package:espeats/src/Features/Presentation/ProfileDetailPage/View/profile_detail_page.dart';
-
 import 'package:espeats/src/Features/Presentation/FilterPage/View/filter_page.dart';
 
 final routes = <String, WidgetBuilder>{
