@@ -71,32 +71,6 @@ class  LoginPage extends StatelessWidget {
                               fontSize: 17.0
                             )),
                           ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 30.0),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text("¿No tienes una cuenta?", style: TextStyle(
-                                    color: gray,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15.0
-                                )),
-                                GestureDetector(
-                                  onTap: (){
-                                    Navigator.pushNamed(context, 'sign_up');
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                                    child: const Text("Regístrate", style: TextStyle(
-                                        color: Color.fromRGBO(255, 140, 0, 1.0),//Theme.of(context).accentoColor,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 15.0
-                                    )),
-                                  ),
-                                ),
-                              ]
-                          ),
                         )
                       ],
                     ),

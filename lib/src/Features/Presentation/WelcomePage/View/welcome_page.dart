@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import '../../../../Colors/colors.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -20,7 +22,7 @@ class WelcomePage extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
               child: Container(
-                color: Colors.black.withOpacity(0.35),
+                color: Colors.black.withOpacity(0.55),
               ),
             ),
           ),
@@ -29,13 +31,13 @@ class WelcomePage extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                child: Text("Cansado de ser pobre y vivir lejos? Ahora solo vive lejos",
+                child: Text("¿Cansado de ir a clases sin comer porque no te alcanza el tiempo para comprar?",
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.displaySmall)
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 30.0),
-                child: const Text("ESPEATS es tu solución", style: TextStyle(
+                child: const Text("ESPEATS es la solución", style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 20.0
@@ -74,6 +76,32 @@ class WelcomePage extends StatelessWidget {
                       ],
                     )
                   )
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 30.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("¿No tienes una cuenta?", style: TextStyle(
+                          color: gray,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 17.0
+                      )),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, 'sign_up');
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: const Text("Regístrate", style: TextStyle(
+                            color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17.0
+                          )),
+                        ),
+                      ),
+                    ]
+                ),
               )
             ],
           )
