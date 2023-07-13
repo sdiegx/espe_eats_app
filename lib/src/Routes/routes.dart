@@ -8,6 +8,8 @@ import 'package:espeats/src/Features/Presentation/SignUpPage/View/sign_up_page.d
 import '../Features/Presentation/Tabs/TabsPage/View/tabs_page.dart';
 import 'package:espeats/src/Features/Presentation/SearchPage/View/search_page.dart';
 import '../Features/Presentation/PlaceDetailPage/View/place_detail_page.dart';
+import 'package:espeats/src/Features/Presentation/FilterPage/View/filter_page.dart';
+
 
 
 final routes = <String,WidgetBuilder>{
@@ -17,5 +19,6 @@ final routes = <String,WidgetBuilder>{
   'sign_up' : (BuildContext context) => const SignUpPage(),
   'tabs' : (BuildContext context) => const TabsPage(),
   'search' : (BuildContext context) => const SearchPage(),
-  'place_detail' : (BuildContext context) => const PlacesDetailPage()
+  'place_detail' : (BuildContext context) => const PlacesDetailPage(),
+  'filter_page' : (BuildContext context) => const FilterPage()
 };
