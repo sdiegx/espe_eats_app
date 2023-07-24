@@ -4,6 +4,9 @@ import 'package:espeats/src/Colors/colors.dart';
 import 'package:espeats/src/Features/Presentation/Tabs/MyOrderTab/Components/empty_view.dart';
 import 'package:espeats/src/Features/Presentation/Tabs/MyOrderTab/Components/list_order_views.dart';
 
+import '../../Widgets/RoundedButton.dart';
+import '../../Widgets/Texts/TextView/View/TextView.dart';
+
 class MyOrderTab extends StatefulWidget {
   const MyOrderTab({Key? key}) : super(key: key);
 
@@ -17,45 +20,43 @@ class _MyOrderTabState extends State<MyOrderTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: gray,
-        body: emptyOrderState
-            ? EmptyOrderView()
-            : const ListOrdersView());
+        backgroundColor: bgGray,
+        body: emptyOrderState ?  EmptyOrderView() :  CustomScrollView(
+          slivers : [
+            const SliverAppBar(
+              elevation: 0.5,
+              leading: Text(''),
+              backgroundColor: Colors.white,
+              title: Text(
+                'Mi Orden',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildListDelegate(
+                  [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Column(
+                        children: [
+                          _orders(context),
+                          const SizedBox(height: 40),
+                          _checkoutResume(context),
+                        ],
+                      ),
+                    ),
+                  ]),
+            ),
+          ],
+        )
+    );
   }
 }
 
-/*
-CustomScrollView(
-slivers = [
-SliverAppBar(
-elevation: 0.5,
-leading: Text(''),
-backgroundColor: Colors.white,
-title: Text(
-'My Order',
-style: TextStyle(
-color: primaryColor,
-fontSize: 17,
-fontWeight: FontWeight.w600,
-),
-),
-),
-SliverList(
-delegate: SliverChildListDelegate([
-Padding(
-padding: EdgeInsets.symmetric(horizontal: 10.0),
-child: Column(
-children: [
-_orders(context),
-SizedBox(height: 40),
-_checkoutResume(context),
-],
-),
-),
-]),
-),
-],
-)
 
 Widget _orders(BuildContext context) {
   return Column(
@@ -65,13 +66,13 @@ Widget _orders(BuildContext context) {
 
 Widget _cardOrder(BuildContext context) {
   return Container(
-    padding: EdgeInsets.symmetric(horizontal: 10.0),
-    margin: EdgeInsets.symmetric(vertical: 10.0),
+    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+    margin: const EdgeInsets.symmetric(vertical: 10.0),
     width: double.infinity,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color.fromRGBO(248, 248, 248, 1.0),
-        boxShadow: [
+        color: const Color.fromRGBO(248, 248, 248, 1.0),
+        boxShadow: const [
           BoxShadow(
               color: Color.fromRGBO(210, 211, 215, 1.0),
               spreadRadius: 1.0,
@@ -98,14 +99,14 @@ Widget _cardOrder(BuildContext context) {
 
 Widget _cardOrderTopContent() {
   return Container(
-    padding: EdgeInsets.symmetric(vertical: 10),
+    padding: const EdgeInsets.symmetric(vertical: 10),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          margin: EdgeInsets.only(top: 7.0, bottom: 7.0, right: 20.0),
-          child: TextView(
-              texto: "Little Creatures - Club Street",
+          margin: const EdgeInsets.only(top: 7.0, bottom: 7.0, right: 20.0),
+          child: const TextView(
+              texto: "Secos del gordo",
               fontSize: 20.0,
               fontWeight: FontWeight.bold),
         ),
@@ -113,18 +114,18 @@ Widget _cardOrderTopContent() {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(Icons.location_on, color: gray, size: 16.0),
-              TextView(
+              const Icon(Icons.location_on, color: gray, size: 16.0),
+              const TextView(
                   texto: "87 Botsford Circle Apt",
                   color: gray,
                   fontWeight: FontWeight.w500,
                   fontSize: 14.0),
               Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
                   width: 110.0,
                   height: 20.0,
                   child: createElevatedButton(
-                      shape: StadiumBorder(),
+                      shape: const StadiumBorder(),
                       color: Colors.orange,
                       labelColor: Colors.white,
                       labelButton: 'Free Delivery',
@@ -140,25 +141,25 @@ Widget _items(context) {
   return Container(
     decoration: BoxDecoration(
         border:
-            Border(bottom: BorderSide(color: Theme.of(context).dividerColor))),
-    child: ListTile(
+        Border(bottom: BorderSide(color: Theme.of(context).dividerColor))),
+    child: const ListTile(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextView(
-              texto: 'Special Gajananad Bhel',
+              texto: 'Almuerzo completo',
               color: Colors.orange,
               fontWeight: FontWeight.w300,
               fontSize: 15.0),
           TextView(
-              texto: 'Mixed vegetables, Chicken Egg',
+              texto: 'Solo segundo',
               color: gray,
               fontWeight: FontWeight.w300,
               fontSize: 12.0)
         ],
       ),
       trailing: TextView(
-          texto: '17.20 €',
+          texto: '2.00 \$',
           color: gray,
           fontWeight: FontWeight.w300,
           fontSize: 15.0),
@@ -167,9 +168,9 @@ Widget _items(context) {
 }
 Widget _moreContent(context) {
   return Container(
-    child: ListTile(
+    child: const ListTile(
       title: TextView(
-          texto: 'Add more items',
+          texto: 'Agregar más items',
           color: pink,
           fontWeight: FontWeight.w600,
           fontSize: 17.0),
@@ -179,13 +180,13 @@ Widget _moreContent(context) {
 
 Widget _checkoutResume(context) {
   return Container(
-    padding: EdgeInsets.all(10),
-    margin: EdgeInsets.symmetric(vertical: 10),
+    padding: const EdgeInsets.all(10),
+    margin: const EdgeInsets.symmetric(vertical: 10),
     width: double.infinity,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: Colors.white,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
               color: Color.fromRGBO(210, 211, 215, 1.0),
               spreadRadius: 1.0,
@@ -194,11 +195,11 @@ Widget _checkoutResume(context) {
     child: Column(
       children: [
         _itemsCheckOutResume(
-            title: 'Subtotal', value: '93.40 €', context: context),
+            title: 'Subtotal', value: '8.00 \$', context: context),
         _itemsCheckOutResume(
-            title: 'Tax & Fee', value: '3.00 €', context: context),
+            title: 'Recargo', value: '1.00 \$', context: context),
         _itemsCheckOutResume(
-            title: 'Delivery', value: 'Free', context: context),
+            title: 'Delivery', value: 'Gratis', context: context),
         _buttonCheckout(context)
       ],
     ),
@@ -223,13 +224,13 @@ Widget _buttonCheckout(context) {
   return Container(
     width: double.infinity,
     height: 45.0,
-    margin: EdgeInsets.only(top: 10.0),
+    margin: const EdgeInsets.only(top: 10.0),
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
           elevation: 0.5,
           primary: Colors.orange,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
       onPressed: () {
         Navigator.pushNamed(context, 'checkout');
       },
@@ -238,16 +239,16 @@ Widget _buttonCheckout(context) {
         children: [
           Container(),
           Container(
-            margin: EdgeInsets.only(left: 50),
-            child: TextView(
+            margin: const EdgeInsets.only(left: 50),
+            child: const TextView(
                 texto: 'Pedir',
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
                 color: Colors.white),
           ),
           Container(
-            child: TextView(
-                texto: '95.49 €',
+            child: const TextView(
+                texto: '9.00 \$',
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.white),
@@ -257,4 +258,3 @@ Widget _buttonCheckout(context) {
     ),
   );
 }
-*/

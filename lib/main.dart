@@ -6,7 +6,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  //mi primer push
   const MyApp({super.key});
 
   @override
