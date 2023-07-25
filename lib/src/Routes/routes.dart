@@ -21,4 +21,3 @@ final routes = <String, WidgetBuilder>{
   'profile-detail': (BuildContext context) => const ProfileDetailPage(),
   'filter_page': (BuildContext context) => const FilterPage()
 };
-

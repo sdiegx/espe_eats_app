@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:espeats/src/Colors/colors.dart';
 
 class FavoriteTab extends StatefulWidget {
-  const FavoriteTab({Key? key});
+  const FavoriteTab({super.key});
 
   @override
   State<FavoriteTab> createState() => _FavoriteTabState();

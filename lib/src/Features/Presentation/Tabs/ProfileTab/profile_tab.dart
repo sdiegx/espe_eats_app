@@ -1,5 +1,6 @@
-import 'package:espeats/src/Colors/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../Colors/colors.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -29,11 +30,11 @@ class _ProfileTabState extends State<ProfileTab> {
 Widget _header() {
   return LayoutBuilder(
     builder: (BuildContext context, BoxConstraints constraints) {
-      double height = constraints.maxWidth > 600 ? 200 : 160;
+      double height = constraints.maxWidth > 700 ? 250 : 200;
       return Container(
           height: height,
           color: bgGray,
-          padding: EdgeInsets.all(50),
+          padding: EdgeInsets.all(40),
           child: Row(
             children: [
               CircleAvatar(
@@ -46,7 +47,7 @@ Widget _header() {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 20.0),
+                    margin: EdgeInsets.only(left: 15.0),
                     child: Row(
                       children: [
                         Text(
@@ -87,7 +88,7 @@ Widget _header() {
                             child: Text(
                               'VIP Member',
                               style:
-                                  TextStyle(fontSize: 11, color: Colors.white),
+                              TextStyle(fontSize: 11, color: Colors.white),
                             ),
                           )
                         ]),
@@ -279,3 +280,5 @@ Widget _contentProfile() {
     ]),
   );
 }
+
+
